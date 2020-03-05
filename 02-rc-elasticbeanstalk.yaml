@@ -525,7 +525,7 @@ Resources:
 
 
 
-# Deploys the RDS Aurora Postgres cluster used to store the application data for WebAPI.
+# Deploys the RDS Aurora Mysql cluster used to store the application data for WebAPI.
   RDSCluster:
     Type: AWS::RDS::DBCluster
     Properties:
@@ -573,7 +573,7 @@ Resources:
       Description: CloudFormation Sample Aurora Cluster Parameter Group
       Family: aurora-mysql5.7
       Parameters:
-        time_zone: US/Eastern
+        time_zone: !Ref DatabaseTimeZone
   RDSDBParameterGroup:
     Type: AWS::RDS::DBParameterGroup
     Properties:
